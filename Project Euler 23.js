@@ -2,7 +2,7 @@ var sum=0;
 var divisors=function(b){
     var divisor=[1];
     var j=2;
-    while(j^2<=b){
+    while(j*j<=b){
         if(b%j===0){
             if(j*j===b){
                 divisor.push(j);
