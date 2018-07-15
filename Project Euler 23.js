@@ -1,7 +1,8 @@
 var sum=0;
 var divisors=function(b){
     var divisor=[1];
-    for(var j=2;j<Math.floor(Math.sqrt(b))+1;j++){
+    var j=2;
+    while(j^2<=b){
         if(b%j===0){
             if(j*j===b){
                 divisor.push(j);
@@ -10,6 +11,7 @@ var divisors=function(b){
                 divisor.push(b/j);
             }
         }
+        j++
     } 
     return divisor;
 };
