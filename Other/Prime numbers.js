@@ -1,15 +1,17 @@
-var Primes =[];
-Primes[0]=2;
-for(var y = 3;y <= 2000000;y+=2){
-    var isYPrime = 1;   
-    for(var i = 3;i <= Math.sqrt(y);i+=2){
-        if(y%i === 0){
-            isYPrime=11;  
-            break;
+//use sieve algorithm
+var flag=Array(11);
+flag.fill(1);
+flag[0]=0;
+flag[1]=0;
+var primes=[]
+for(var i=2;i<flag.length;i++){
+    if(flag[i]===1){
+        primes.push(i);
+        counter=i;
+        while(counter<=flag.length){
+            counter+=i;
+            flag[counter]=0;
         }
-
-    }
-    if(isYPrime === 1){
-        Primes.push(y);    
     }
 }
+console.log(primes.join());
